@@ -12,10 +12,10 @@
         <p class="home__view_about-us_title">About Us</p>
         <div class="home_view__about-us_text">
           <span class="home_view__about-us_text-item">Hey there! I'm Vlad, and welcome to Vlado's Barbershop!<br> 
-            We've created this space with over ten years of experience in the barber industry.<br> We truly believe that a fantastic haircut goes hand in hand with top-tier service
+            We've created this space with over ten years of experience in the barber industry. We truly believe that a fantastic haircut goes hand in hand with top-tier service
           </span>
           <span class="home_view__about-us_text-item">
-            Our crew blends classic techniques with the latest trends to ensure your cut or<br>shave isn't just on point but also timeless. It's not just about looking good here; it's<br>about the entire experience. Get ready for personalized advice to choose the<br>perfect haircut, grooming tips, and a range of extra services to make your visit<br>truly special.
+            Our crew blends classic techniques with the latest trends to ensure your cut or shave isn't just on point but also timeless. It's not just about looking good here; it's about the entire experience. Get ready for personalized advice to choose the perfect haircut, grooming tips, and a range of extra services to make your visit truly special.
           </span>
         </div>
       </div>
@@ -365,7 +365,7 @@ const scrollToContacts = (): void => {
     font-size: 51px;
     font-weight: 300;
     text-transform: uppercase;
-    margin-bottom: 32px;
+    margin-bottom: 31px;
   }
 
   .home_view__about-us_text {
@@ -376,11 +376,11 @@ const scrollToContacts = (): void => {
   }
 
   .home_view__about-us_text-item {
-    font-size: 19px;
+    font-size: 18px;
     line-height: 27px;
     font-weight: 400;
     margin-bottom: 20px;
-    padding-bottom: 10px;
+    padding: 0 19.5px 10px;
     text-align: center; 
     text-indent: 3%;
   }

@@ -6,15 +6,15 @@
         <img class="header_view__logo-title" v-bind:src="logoTitle" alt="">
       </div>
       <div class="header_view__link">
-        <div @click="scrollToAboutUs" class="header_view__link-item">about us</div>
+        <div @click="scrollToAboutUs" class="header_view__link-item">{{ $t('aboutUs') }}</div>
         <div @click="scrollToServises" class="header_view__link-item">servises and prises</div>
         <div @click="scrollToTeam" class="header_view__link-item">our team</div>
         <div @click="scrollToContacts" class="header_view__link-item">contacts</div>
       </div>
       <div class="header_view__social">
         <select class="header_view__social-select">
-          <option>cz</option>
           <option>en</option>
+          <option>cz</option>
           <option>ua</option>
           <option>ru</option>
         </select>
