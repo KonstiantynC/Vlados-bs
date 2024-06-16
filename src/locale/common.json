@@ -1,0 +1,32 @@
+{
+  "barbers": {
+    "topBarber": {
+      "barberName": {
+        "en": "Vlad",
+        "cz": "Vlad",
+        "ua": "Влад",
+        "ru": "Влад"
+      },
+      "barberPosition": {
+        "en": "Top-barber",
+        "cz": "Top-barber",
+        "ua": "Топ-барбер",
+        "ru": "Топ-барбер"
+      }
+    },
+    "firstBarber": {
+      "barberName": {
+        "en": "Alex",
+        "cz": "Alex",
+        "ua": "Алекс",
+        "ru": "Алекс"
+      },
+      "barberPosition":  {
+        "en": "Barber",
+        "cz": "Barber",
+        "ua": "Barber",
+        "ru": "Barber"
+      }
+    }
+  }
+}

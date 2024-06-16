@@ -106,6 +106,6 @@
     },
     "ShopParkingText": "V okolí Barbershopu jsou parkovací místa vždy k dispozici"
   },
-  "footerText": "{'@'} ALL RIGHTS RESERVED 2024"
+  "footerText": "{'@'} ALL RIGHTS RESERVED {year}"
   
 }

@@ -1,9 +1,33 @@
 <template>
   <div :class="{'navigation__link': true, 'vertical-layout': isVertical}">
-    <div @click="scrollTo('scrollToAboutUs')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.about') }}</div>
-    <div @click="scrollTo('scrollToServises')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.services-header') }}</div>
-    <div @click="scrollTo('scrollToTeam')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.team') }}</div>
-    <div @click="scrollTo('scrollToContacts')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.contacts') }}</div>
+    <a 
+      href="#About" 
+      @click="scrollTo('scrollToAboutUs')" 
+      :class="['navigation__link-item', { 'vertical-item': isVertical }]"
+    >
+      {{ $t('navigation.about') }}
+    </a>
+    <a 
+      href="#ServicesAndPrises" 
+      @click="scrollTo('scrollToServises')" 
+      :class="['navigation__link-item', { 'vertical-item': isVertical }]"
+    >
+      {{ $t('navigation.services-header') }}
+    </a>
+    <a 
+      href="#ourTeam" 
+      @click="scrollTo('scrollToTeam')" 
+      :class="['navigation__link-item', { 'vertical-item': isVertical }]"
+    >
+      {{ $t('navigation.team') }}
+    </a>
+    <a 
+      href="#Contacts" 
+      @click="scrollTo('scrollToContacts')" 
+      :class="['navigation__link-item', { 'vertical-item': isVertical }]"
+    >
+      {{ $t('navigation.contacts') }}
+    </a>
   </div>
 </template>
 
@@ -73,6 +97,8 @@ const scrollTo = (section: keyof typeof scrollPositions) => {
 .navigation__link-item {
   margin: 0 7.5px;
   text-transform: uppercase;
+  color: $color-black;
+  text-decoration: none;
   &:hover {
     color: $link-hover-color;
     cursor: pointer;
