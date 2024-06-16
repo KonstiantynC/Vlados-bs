@@ -3,22 +3,27 @@
     <Loader />
     <HeaderView />
     <div class="home_view__wrp">
-
       <div class="image-wrp-mobile">
-        <img class="" :src="overview" alt="">
+        <img class="" v-bind:src="overview" alt="">
       </div>
-
       <div class="home_view__preview">
-        <img class="home_view__logo" v-bind:src="Logo" alt="">
+        <img class="home_view__logo--desktop" v-bind:src="LogoDecktop" alt="">
+        <img class="home_view__logo--mobile" v-bind:src="LogoMobile" alt="">
         <p class="home_view__agite-text--desktop" v-html="$t('mainSection.agiteText')"></p>
         <p class="home_view__agite-text--mobile" v-html="$t('mainSection.agiteTextMobile')"></p>
-        <a class="btn" :href="urls.openBook" type="button" target="_blank" rel="noopener noreferrer">
+        <a
+            class="btn"
+            :href="urls.openBook"
+            type="button"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
           {{ $t('buttonTitle') }}
           <img class="home_view__select-arrow_img" :src="selectImg">
         </a>
       </div>
       <img class="home_view__overview" v-bind:src="overview" alt="">
-<!--      <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">-->
+      <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">
 
 
       <div class="home_view__about-us">
@@ -166,11 +171,10 @@
             </tr>
           </tbody>
         </table>
-        
-        <a 
-          class="btn_ot home_view__btn-sp" 
-          :href="urls.openBook" 
-          type="button" 
+        <a
+          class="btn_ot home_view__btn-sp"
+          :href="urls.openBook"
+          type="button"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -201,10 +205,10 @@
               </div>
               
               <div class="home_view__barber-button">
-                <a 
-                  class="btn_wb home_view__btn-wb" 
-                  :href="urls.openBook" 
-                  type="button" 
+                <a
+                  class="btn_wb home_view__btn-wb"
+                  :href="urls.openBook"
+                  type="button"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -230,10 +234,10 @@
                 </div>
               </div>
               <div class="home_view__barber-button">
-                <a 
-                  class="btn_wb home_view__btn-wb" 
-                  :href="urls.openBook" 
-                  type="button" 
+                <a
+                  class="btn_wb home_view__btn-wb"
+                  :href="urls.openBook"
+                  type="button"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -247,14 +251,11 @@
 
       <div class="home_view__follow-us">
         <div class="home_view__follow-us_title">
-          <div class="home_view__follow-us_title-text">
-            {{ $t('FollowUs.title.paragraphOne') }}<br>{{$t('FollowUs.title.paragraphTwo') }}
-          </div>
-
-          <a 
-            class="btn_ot home_view__btn-fu" 
-            :href=urls.redirectToInstagram 
-            type="button" 
+          <div class="home_view__follow-us_title-text">{{ $t('FollowUs.title.paragraphOne') }}<br>{{ $t('FollowUs.title.paragraphTwo') }}</div>
+          <a
+            class="btn_ot home_view__btn-fu"
+            :href = urls.redirectToInstagram
+            type="button"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -269,11 +270,7 @@
             :src="follow"
           >
         </div>
-
-        <img 
-          class="home_view__follow-us_image-item_phone" 
-          :src="phone"
-        >
+        <img class="home_view__follow-us_image-item_phone" v-bind:src="phone">
       </div>
 
       <div class="home_view__contacts">
@@ -317,6 +314,9 @@
             <div class="home_view__contacts-table_value" href="#">{{ $t('contacts.email.email') }}</div>
           </div>
         </div>
+
+        <Social class="home_view__contacts-map"/>
+
         <div class="home_view__contacts-text">
           {{ $t('contacts.ShopParkingText') }}
         </div>
@@ -325,16 +325,20 @@
       <div class="home_view-map_and_footer">
         <MapGoogle class="home-view__google-map"/>
         <Social class="home_view-map_and_footer-item"/>
-        <Navigation class="home_view-map_and_footer-menu"/>
+        <div class="home-view-map__contacts-text">
+          {{ $t('contacts.ShopParkingText') }}
+        </div>
+        <Navigation class="home_view-map_and_footer-menu--desktop"/>
+        <Navigation class="home_view-map_and_footer-menu--mobile" :isVertical="true"/>
         <div class="home_view-map_and_footer-logo">
-          <img 
-            @click="scrollToTop" 
-            class="home_view-map_and_footer-logo-item_arrow" 
-            :src="footerArrow"
+          <img
+            @click="scrollToTop"
+            class="home_view-map_and_footer-logo-item_arrow"
+            v-bind:src="footerArrow"
           >
-          <img 
-            class="home_view-map_and_footer-logo-item_logo" 
-            :src="footerLogo"
+          <img
+            class="home_view-map_and_footer-logo-item_logo"
+            v-bind:src="footerLogo"
           >
         </div>
 
@@ -443,9 +447,7 @@ function scrollToTop() {
   }
 
   .home_view__agite-text {
-
-    &--desktop,
-    &--mobile {
+    &--desktop, &--mobile {
       font-size: 25px;
       font-weight: 300;
       text-transform: uppercase;
@@ -551,7 +553,6 @@ function scrollToTop() {
   top: 566px;
   margin-top: 11px;
   filter: opacity(0);
-
   &:hover {
     filter: opacity(100%);
     transition: all 500ms;
@@ -661,8 +662,7 @@ function scrollToTop() {
   margin: 0 0 67px 0;
   border-collapse: collapse;
 
-  th,
-  td {
+  th, td {
     height: 64px;
     border-bottom: 01px solid $table-border-color;
   }
@@ -777,7 +777,6 @@ function scrollToTop() {
   margin: 0 0 39px 0;
   z-index: 1;
   filter: grayscale(100%);
-
   &:hover {
     filter: grayscale(0);
     z-index: 20;
@@ -872,7 +871,6 @@ function scrollToTop() {
 
 .home_view__btn-fu {
   width: 135px;
-
   &:hover {
     background-color: $color-orange;
     border: 1px solid $color-orange;
@@ -915,11 +913,9 @@ function scrollToTop() {
   @keyframes spin {
     from {
       transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
+    } to {
+        transform: rotate(360deg);
+      }
   }
 
   @media (max-width: $medium-screen) {
@@ -1099,7 +1095,11 @@ function scrollToTop() {
 }
 
 .home_view-map_and_footer-item {
-  margin: 40px 0 33px 0 ;
+  margin: 40px 0 33px 0;
+
+  @media (max-width: $medium-screen) {
+    display: none;
+  }
 }
 
 .home_view-map_and_footer-icon {
@@ -1140,7 +1140,6 @@ function scrollToTop() {
   position: absolute;
   left: 93px;
   transition: all .4s;
-
   &:hover {
     cursor: pointer;
   }
@@ -1150,8 +1149,7 @@ function scrollToTop() {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  ;
+  align-items: center;;
   width: 1400px;
   margin: 0 0 34px 0;
   position: relative;
@@ -1162,7 +1160,7 @@ function scrollToTop() {
 }
 
 .home_view-map_and_footer-logo-item_logo {
-  margin: 0 10px 0 0;
+  margin:0 10px 0 0 ;
 }
 
 .home_view-map_and_footer-footer {
@@ -1185,4 +1183,5 @@ function scrollToTop() {
     align-items: center;
   }
 }
+
 </style>
