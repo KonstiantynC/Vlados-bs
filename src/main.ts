@@ -21,6 +21,7 @@ export const createApp = ViteSSG(
   }
 );
 
+
 export async function includedRoutes(
   paths: String, 
   routes: RouteRecordRaw[]
